@@ -1,0 +1,14 @@
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\bin\Debug\net8.0\Exe2.exe
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\bin\Debug\net8.0\Exe2.deps.json
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\bin\Debug\net8.0\Exe2.runtimeconfig.json
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\bin\Debug\net8.0\Exe2.dll
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\bin\Debug\net8.0\Exe2.pdb
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.AssemblyInfoInputs.cache
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.AssemblyInfo.cs
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.csproj.CoreCompileInputs.cache
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.dll
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\refint\Exe2.dll
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.pdb
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\Exe2.genruntimeconfig.cache
+C:\Users\Igor\Desktop\PA\Lista\exe1\Exe2\Exe2\obj\Debug\net8.0\ref\Exe2.dll
