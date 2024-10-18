@@ -1,3 +1,11 @@
+# Treino e Praticas
+Acervo de exercícios realizados para praticar e adquirir novos conhecimentos.
+
+
+
+
+
+
 # EtecDS
 Acervo de trabalhos/exercícios realizados durante os estudos na Etec Drª Ruth cardoso
 
