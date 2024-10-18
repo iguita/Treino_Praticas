@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <script> 
+        function ControleDeSelecao() {
+            var dropdown = document.getElementById("operadores").value;
+            var placeText;
+            var visibilidade;
+        
+            if (['raiz', 'fatorial', 'fibonacci'].indexOf(dropdown) > -1) {
+                visibilidade = "hidden";
+                placeText = "Insira um número";
+            } else {
+                visibilidade = "visible";
+                placeText = "";
+            }
+        
+            document.getElementById("txtValor2").style.visibility = visibilidade;
+            document.getElementById("txtValor1").placeholder = placeText;
+        }
+        
+        function Limpar(id1, id2) {
+            document.getElementById(id1).value = "";
+            document.getElementById(id2).value = "";
+            document.getElementById("saida").innerHTML = "Resultado:";
+        }
+        
+        function Calcular(id1, id2) {
+            var operador = document.getElementById("operadores").value;
+            var num1 = parseFloat(document.getElementById(id1).value);
+            var num2 = parseFloat(document.getElementById(id2).value) || 0;
+            var resultado;
+        
+            if (isNaN(num1) || (isNaN(num2) && operador !== "raiz" && operador !== "fatorial" && operador !== "fibonacci")) {
+                alert("Por favor, insira números válidos.");
+                return;
+            }
+        
+            switch (operador) {
+                case "+":
+                    resultado = num1 + num2;
+                    break;
+                case "-":
+                    resultado = num1 - num2;
+                    break;
+                case "*":
+                    resultado = num1 * num2;
+                    break;
+                case "/":
+                    resultado = num2 !== 0 ? (num1 / num2).toFixed(2) : "Erro! Divisão por zero.";
+                    break;
+                case "raiz":
+                    resultado = "&radic;" + num1 + " = " + Math.sqrt(num1).toFixed(2);
+                    break;
+                case "potencia":
+                    resultado = num1 + "^" + num2 + " = " + Math.pow(num1, num2).toFixed(2);
+                    break;
+                case "fatorial":
+                    resultado = fatorial(num1);
+                    break;
+                case "fibonacci":
+                    resultado = fibonacci(num1);
+                    break;
+                case "porcento":
+                    resultado = (num1 / 100) * num2;
+                    break;
+                case "media":
+                    resultado = media(num1, num2);
+                    break;
+                default:
+                    resultado = "Operação inválida.";
+            }
+        
+            document.getElementById("saida").innerHTML = "Resultado: " + resultado;
+        }
+        
+        function fatorial(n) {
+            let res = 1;
+            for (let i = n; i > 1; i--) {
+                res *= i;
+            }
+            return n + "! = " + res;
+        }
+        
+        function fibonacci(n) {
+            let fib = [0, 1];
+            for (let i = 2; i <= n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib.slice(1, n + 1).join(", ");
+        }
+        
+        function media(n1, n2) {
+            let arrayNum = n1.toString().split(',').map(Number).concat(n2.toString().split(',').map(Number));
+            arrayNum = arrayNum.filter(Boolean);
+            let soma = arrayNum.reduce((a, b) => a + b, 0);
+            return "Média: " + (soma / arrayNum.length).toFixed(2);
+        }        
+    </script>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculadora 1.0</h1>
+        <input type="text" id="txtValor1" class="input" placeholder="0">
+        <select id="operadores" class="operator-select" onchange="ControleDeSelecao();">
+            <optgroup label="Básico">
+                <option value="+">+(somar)</option>
+                <option value="-">-(subtrair)</option>
+                <option value="*">*(multiplicar)</option>
+                <option value="/">/(dividir)</option>
+            </optgroup>
+            <optgroup label="Outros">
+                <option value="raiz">Raiz</option>
+                <option value="potencia">Potência</option>
+                <option value="fatorial">Fatorial</option>
+                <option value="fibonacci">Fibonacci</option>
+                <option value="porcento">Porcentagem</option>
+                <option value="media">Média</option>
+                <option value="calc">Develop Calc</option>
+            </optgroup>
+        </select>
+        <input type="text" id="txtValor2" class="input" placeholder="0">
+        
+        <div class="buttons">
+            <button class="btn" onclick="Calcular('txtValor1', 'txtValor2')">Calcular</button>
+            <button class="btn" onclick="Limpar('txtValor1', 'txtValor2')">Limpar</button>
+        </div>
+        <p id="saida" class="result">Resultado:</p>
+    </div>
+</body>
+</html>
